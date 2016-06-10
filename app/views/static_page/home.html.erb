@@ -1,0 +1,242 @@
+<%= render "layouts/headerHomePage" %>
+<body class="top-navigation">
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+            <!-- END - Top Nav -->
+            <div class="wrapper wrapper-content animated fadeInRight" style="margin-top: 30px;">
+                <div class="container">
+
+                    <!-- Career Path Search Fields -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="ibox float-e-margins">
+
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <input type="text" id="job" name="job" value="" placeholder="Enter your dream job title" class="form-control input-lg" style="border: 1px solid #1ab394;"> </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <select class="form-control input-lg" name="account" style="border: 1px solid #1ab394;">
+                                                <option>Year to achieve: 1</option>
+                                                <option>Year to achieve: 3</option>
+                                                <option>Year to achieve: 5</option>
+                                                <option>Year to achieve: 10</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-lg btn-primary " type="submit">Launch Career Path</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END - Career Path Search Fields -->
+
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <!-- Career Path Visualization -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Career Path - Financial Controller</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;">
+                                </div>
+                            </div>
+                            <!-- END - Career Path Visualization -->
+
+                            <!-- About -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>About Financial Controller</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <p>Direct financial activities, such as planning, procurement, and investments for all or part of an organization.</p>
+                                </div>
+                            </div>
+                            <!-- END - About -->
+
+                            <!-- Skills -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Skills</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <ul>
+                                        <li>Critical thinking</li>
+                                        <li>Financial Resources</li>
+                                        <li>Problem Solving </li>
+                                        <li>Reading Comprehension</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END - Skills -->
+
+                            <!-- Education -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Education</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <ul class="stat-list">
+                                        <li>
+                                            <h2 class="no-margins">43%</h2> Master's degree
+                                            <div class="progress progress-mini">
+                                                <div style="width: 43%;" class="progress-bar"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2 class="no-margins ">37%</h2> Bachelor's degree
+                                            <div class="progress progress-mini">
+                                                <div style="width: 37%;" class="progress-bar"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <h2 class="no-margins ">20%</h2> Post-baccalaureate certificate
+                                            <div class="progress progress-mini">
+                                                <div style="width: 20%;" class="progress-bar"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END - Education -->
+                            
+                            <!-- Job Search Result -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-content">
+                                    <h4>Job Listings</h4>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="search-result">
+                                        <h3><a href="#">Staff Accountant </a></h3>
+                                        <a href="#" class="search-link">Wpromote</a>
+                                        <br />El Segundo, CA - 12 days ago
+                                        <p> The Staff Accountant reports to the VP of Finance and will assist with the daily execution of accounting activities such as ...</p>
+                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="search-result">
+                                        <h3><a href="#">Senior Accountant</a></h3> <a href="#" class="search-link">Vertical Careers, Inc.</a>
+                                        <br /> Carson, CA - 5 days ago
+                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
+                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <div class="search-result">
+                                        <h3><a href="#">Accountant</a></h3> <a href="#" class="search-link">The Hall Center</a>
+                                        <br /> Santa Monica, CA - 3 hours ago
+                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
+                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
+                                    </div>
+                                    <div class="hr-line-dashed"></div>
+                                    <a href="jobs.html">
+                                        <button class="btn btn-lg btn-primary " type="submit">See more jobs</button>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- END - Job Search Result -->
+
+                        </div>
+
+                        <div class="col-lg-4">
+
+                            <!-- Salary -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <span class="label label-primary pull-right">Annual</span>
+                                    <h5>Salary</h5>
+                                </div>
+                                <div class="ibox-content">
+                                    <h1 class="no-margins">$115,320</h1>
+                                    <div class="stat-percent font-bold text-navy">2% <i class="fa fa-level-up"></i></div>
+                                    <small>Compare to prior year</small>
+                                </div>
+                            </div>
+                            <!-- END - Salary -->
+
+                            <!-- Related Jobs -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Related Job Titles</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link"> <i class="fa fa-chevron-up"></i> </a>
+                                        <a class="close-link"> <i class="fa fa-times"></i> </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <div class="feed-activity-list">
+                                        <div class="feed-element">
+                                            <div> <a href="#">Accountant</a> </div>
+                                        </div>
+                                        <div class="feed-element">
+                                            <div> <a href="#">Accounting Manager</a> </div>
+                                        </div>
+                                        <div class="feed-element">
+                                            <div> <a href="#">Assistant Controller</a> </div>
+                                        </div>
+                                        <div class="feed-element">
+                                            <div> <a href="#">Chief Financial Officer (CFO)</a> </div>
+                                        </div>
+                                        <div class="feed-element">
+                                            <div> <a href="#">Finance Director</a> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END - Related Jobs -->
+
+
+                            <!-- Job Alert -->
+                            <div class="ibox float-e-margins">
+                                <div class="ibox-title">
+                                    <h5>Job Alert</h5>
+                                    <div class="ibox-tools">
+                                        <a class="collapse-link"> <i class="fa fa-chevron-up"></i> </a>
+                                        <a class="close-link"> <i class="fa fa-times"></i> </a>
+                                    </div>
+                                </div>
+                                <div class="ibox-content">
+                                    <p>Want an email when new jobs match this search?</p>
+
+                                    <div class="form-group">
+                                        <div class="i-checks">
+                                            <label class="checkbox-inline">
+                                                <input type="radio" value="option1" name="a"> <i></i> Daily </label>
+                                            <label class="checkbox-inline">
+                                                <input type="radio" checked="" value="option2" name="a"> <i></i> Weekly </label>
+                                        </div>
+                                    </div>
+
+                                    <p>
+                                        <button type="button" class="btn btn-block btn-primary">Create Job Alert</button>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- END - Job Alert -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
