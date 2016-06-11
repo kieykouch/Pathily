@@ -5,7 +5,9 @@
 	            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 	                <i class="fa fa-reorder"></i>
 	            </button>
-	            <a href="index.html" class="pathilylogo"><img style="-webkit-user-select: none" src="<%= asset_path( 'pathily_logo.png' ) %>"></a>
+	            
+            	<%= link_to image_tag("pathily_logo.png", :alt => "Logo", :class => "pathilylogo", :style => '-webkit-user-select: none'), root_path %>
+	            
 	        </div>
 	
 	        <div class="navbar-collapse collapse" id="navbar">
