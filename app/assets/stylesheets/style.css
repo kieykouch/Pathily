@@ -3852,7 +3852,7 @@ table.table-mail tr td {
 }
 /* BACKGROUNDS */
 .gray-bg {
-  background-image: url("img/bg-tile.png");
+  background-image: url("bg-tile.png");
   background-color: #f3f3f4;
 }
 .white-bg {
