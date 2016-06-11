@@ -16,6 +16,7 @@ Rails.application.config.assets.precompile += %w( style.css )
 Rails.application.config.assets.precompile += %w( social-buttons.css )
 Rails.application.config.assets.precompile += %w( font-awesome.css )
 Rails.application.config.assets.precompile += %w( style.min.css )
+Rails.application.config.assets.precompile += %w( static_page.css )
 
 #Javascript
 Rails.application.config.assets.precompile += %w( icheck.min.js )

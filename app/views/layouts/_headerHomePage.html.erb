@@ -23,22 +23,23 @@
 	            <ul class="nav navbar-top-links navbar-right">
 	            	<% if user_signed_in? %>
 	            		<li class="dropdown">
-	                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 
-	                    	<%= current_user.email %>
-	                    	<span class="caret"></span>
-	                    </a>
-	                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-	                        <li><a href="_settings.html">Settings</a></li>
-	                        <li class="divider"></li>
-	                        <li><a href="_signin.html">Sign Out</a></li>
-	                    </ul>
+		                    <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+		                    	<%= current_user.first_name + " " + current_user.last_name %>
+		                    	<span class="caret"></span>
+		                    </a>
+		                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+		                        <li><a href="_settings.html">Settings</a></li>
+		                        <li class="divider"></li>
+		                        <li><a href="_signin.html">Sign Out</a></li>
+		                    </ul>
 	                	</li>
-	            		
+	            		<%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %>
 	            	<% else %>
 	            	<ul class="nav navbar-nav">
 	            		<li>
 	            		<%= link_to "Sign up", new_user_registration_path %>  
 	            		</li>
+	            		<li class="divider"></li>
 	            		<li>
 	            		<%= link_to "Sign in", new_user_session_path %>  
 	            		</li>
