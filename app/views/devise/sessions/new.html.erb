@@ -22,14 +22,12 @@
 				    </div>
 				  <% end -%>
 				
-				  <div class="btn btn-primary block full-width m-b">
-				    <%= f.submit "Sign In", :id => "signin"%>
-				  </div>
+				  <%= f.submit "Sign In", :class => "btn btn-primary block full-width m-b"%>
+				  
 				  <% end %>
 				  <%= render "devise/shared/links" %>
 			 </div>
 		</div>
 	</div>
-	<%= render "layouts/footer" %>
 </body>
 
