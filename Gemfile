@@ -43,3 +43,6 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'jquery-turbolinks'
+gem 'simple_form'
+
+

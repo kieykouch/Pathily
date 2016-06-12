@@ -1,4 +1,7 @@
 class StaticPageController < ApplicationController
+
+  
+
   def home
     
   end
@@ -15,4 +18,7 @@ class StaticPageController < ApplicationController
     
   end
   
+
+ 
+
 end
