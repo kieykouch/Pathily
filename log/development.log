@@ -35192,3 +35192,94 @@ Started GET "/assets/career_path-2637b74b0a06342b1b4f5979b7dfa324851afd3e3fd6c1f
 
 
 Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:38:29 -0700
+
+
+Started GET "/" for ::1 at 2016-06-12 11:49:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPageController#home as HTML
+  Rendered layouts/_headerHomePage.html.erb (1409.2ms)
+  Rendered devise/shared/_signupmodel.html.erb (189.9ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+  Rendered static_page/home.html.erb within layouts/application (1646.0ms)
+Completed 200 OK in 2371ms (Views: 2347.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:49:54 -0700
+
+
+Started POST "/users" for ::1 at 2016-06-12 11:50:31 -0700
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"592gDi++wa8lEumlkFIX+y5yb2YnJibkfpS+iXdQFGlO2vmWUINafmo7K8PTdo9984Nj63qQw6s2ZXbehSwiNw==", "user"=>{"first_name"=>"kom", "last_name"=>"k", "email"=>"ki.ey.kouch@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (16.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ki.ey.kouch@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Kom"], ["last_name", "K"], ["email", "ki.ey.kouch@gmail.com"], ["encrypted_password", "$2a$11$BMCpYS8kDi5nV1dYXc1rw.3kQiqh7NyLQPDCRsul0A.Ut/eyraRVy"], ["created_at", "2016-06-12 18:50:31.766261"], ["updated_at", "2016-06-12 18:50:31.766261"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-06-12 18:50:31.890319"], ["current_sign_in_at", "2016-06-12 18:50:31.890319"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2016-06-12 18:50:31.891159"], ["id", 1]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 461ms (ActiveRecord: 20.6ms)
+
+
+Started GET "/" for ::1 at 2016-06-12 11:50:31 -0700
+Processing by StaticPageController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_headerHomePage.html.erb (3.0ms)
+  Rendered devise/shared/_signupmodel.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+  Rendered static_page/home.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 118ms (Views: 116.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:50:32 -0700
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-06-12 11:50:38 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Awtg7IBiZL+gjd9sxVunUYXgkfM+37gRHd6Q7WrVSVeqDDl0/1//bu+kHQqGfz/XWBGdfmNpXV5VL1i6mKl/CQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-06-12 11:50:38 -0700
+Processing by StaticPageController#home as HTML
+  Rendered layouts/_headerHomePage.html.erb (1.7ms)
+  Rendered devise/shared/_signupmodel.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+  Rendered static_page/home.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 123ms (Views: 121.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:50:38 -0700
+
+
+Started POST "/users" for ::1 at 2016-06-12 11:50:49 -0700
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E7u+IAwLQ4htE6XBPClaoH2BPryZwI/zJiSqkyVW2E5MsHFaBvWBwnao2p/eS6HSIkL81hNc0a1j2/I2Hcigww==", "user"=>{"first_name"=>"Ki", "last_name"=>"k", "email"=>"ki.ey.kouch@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'ki.ey.kouch@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 297ms (Views: 120.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:50:49 -0700
+
+
+Started POST "/users" for ::1 at 2016-06-12 11:51:03 -0700
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DkmnCfo/7CXi+lBNKXSfXJs6OX2gXxnAmiKbcvpQ8IFRQmhz8MEub/lBLxPLFmQuxPn7FyrDR57f3cPXws6IDA==", "user"=>{"first_name"=>"", "last_name"=>"k", "email"=>"ki.ey.kouch@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ki.ey.kouch@gmail.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered devise/registrations/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 153ms (Views: 129.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:51:03 -0700
+
+
+Started GET "/assets/bg-tile.png" for ::1 at 2016-06-12 11:51:05 -0700
