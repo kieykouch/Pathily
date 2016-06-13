@@ -30,10 +30,12 @@
 		                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
 		                        <li><a href="_settings.html">Settings</a></li>
 		                        <li class="divider"></li>
-		                        <li><a href="_signin.html">Sign Out</a></li>
+		                        <li>
+		                        	<%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %>
+		                        </li>
 		                    </ul>
 	                	</li>
-	            		<%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %>
+	            		
 	            	<% else %>
 	            	<ul class="nav navbar-nav">
 	            		<li>

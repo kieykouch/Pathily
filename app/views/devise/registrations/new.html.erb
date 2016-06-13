@@ -4,7 +4,7 @@
 			<h2 class="font-bold">Sign Up</h2>
 	
 			<div class = 'row col-lg-12' >
-			<%= form_for(resource, as: resource_name, url: new_job_alert_path(resource_name)) do |f| %>
+			<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>
 			
 			  <div class="form-group">
