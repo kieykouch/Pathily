@@ -1,4 +1,7 @@
 <%= render "layouts/headerHomePage" %>
+<%= render "devise/shared/signupmodel" %>
+<%= render "layouts/jobalertmodal" %>
+
 <body class="top-navigation">
 
     <div id="wrapper">
@@ -28,7 +31,7 @@
                                         </div>
                                     </div>
 
-                                    <%= render "devise/shared/signupmodel" %>
+                                    
 
                                     <% if !user_signed_in? %>
                                         <script>
@@ -244,7 +247,6 @@
                                         </div>
                                     </div>
 
-                                    <%= render "layouts/jobalertmodal" %>
 
                                     <p>
                                         <button type="button" class="btn btn-block btn-primary" onClick="$('#CreateJobAlert').modal()">Create Job Alert</button>
