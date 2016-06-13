@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class NewsletterTest < ActiveSupport::TestCase
+class JobAlertTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

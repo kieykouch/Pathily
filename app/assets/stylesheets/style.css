@@ -15,6 +15,10 @@
   margin-right: auto;
 }
 
+#flash{
+  display:none;
+}
+
 h1,
 h2,
 h3,

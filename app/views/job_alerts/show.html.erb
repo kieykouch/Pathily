@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @job_alert.email %>
+</p>
+
+<p>
+  <strong>Freqency:</strong>
+  <%= @job_alert.freqency %>
+</p>
+
+<%= link_to 'Edit', edit_job_alert_path(@job_alert) %> |
+<%= link_to 'Back', job_alerts_path %>

@@ -34,7 +34,7 @@
                                         <script>
                                             $(window).load(function(){
                                                 $('#PleaseRegister').modal('show');
-                                            });
+                                           });
                                         </script>
                                         <div class="col-md-3">
                                             <button class="btn btn-lg btn-primary " onClick="$('#PleaseRegister').modal()">Launch Career Path</button>
@@ -244,9 +244,21 @@
                                         </div>
                                     </div>
 
+                                    <%= render "layouts/jobalertmodal" %>
+
                                     <p>
-                                        <button type="button" class="btn btn-block btn-primary">Create Job Alert</button>
+                                        <button type="button" class="btn btn-block btn-primary" onClick="$('#CreateJobAlert').modal()">Create Job Alert</button>
                                     </p>
+
+                                    <script>
+                                            $(window).load(function(){
+                                                $('#job_alert_tag').click(function(){
+                                                    $('#flash').delay(500).fadeIn('normal', function() {
+                                                        $(this).delay(2500).fadeOut();
+                                                    });
+                                              });
+                                           });
+                                    </script>
                                 </div>
                             </div>
                             <!-- END - Job Alert -->

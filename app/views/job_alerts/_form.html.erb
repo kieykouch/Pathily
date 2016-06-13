@@ -1,0 +1,32 @@
+<%= form_for(@job_alert) do |f| %>
+  <% if @job_alert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job_alert.errors.count, "error") %> prohibited this job_alert from being saved:</h2>
+
+      <ul>
+      <% @job_alert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, "Related Job" %>
+    <%= f.text_field :job_relate_title, :class => "form-control", :placeholder => "Software, Accountant, etc" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, :class => "form-control", :placeholder => 'Email' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :freqency %><br>
+    <%= f.select :freqency, [['Weekly','Weekly'],['Daily','Daily']], {}, {class: "form-control"}%>
+  </div>
+  
+  <div class="form-group">
+      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b" %>
+  </div>
+<% end %>

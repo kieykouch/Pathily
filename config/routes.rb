@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :job_alerts
   devise_for :users, :controllers => { registrations: 'registrations' }
   root 'static_page#home'
   
