@@ -69,7 +69,12 @@ GEM
     execjs (2.7.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    indeed_api (0.0.4)
+      httparty
     jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -81,6 +86,9 @@ GEM
       railties (>= 3.1.0)
       turbolinks
     json (1.8.3)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -91,6 +99,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+    multi_xml (0.5.5)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -182,9 +191,12 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   devise
+  httparty
+  indeed_api
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
+  kaminari
   pg
   rails (= 4.2.4)
   rails_12factor

@@ -1,30 +1,35 @@
 <%= render "layouts/headerHomePage" %>
 <body class="top-navigation">
     <div id="wrapper">
-        <div id="page-wrapper" class="gray-bg">
+        <div id="page-wrapper" class="gray-bg">           
             <div class="wrapper wrapper-content animated fadeInRight" style="margin-top: 30px;">
                 <div class="container">
+                    <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
                     <div class="row">
                         <div class="col-lg-12">
-                            <div class="ibox float-e-margins">
 
+                            <div class="ibox float-e-margins">
+                                
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <input type="text" id="job" name="job" value="" placeholder="Job title, company, or keywords" class="form-control input-lg" style="border: 1px solid #1ab394;"> </div>
+                                            <%= text_field_tag :search, params[:search], placeholder: "Job title, company, or keywords", style: "border: 1px solid #1ab394;", class: "form-control input-lg", id: "job" %>
+                                        </div>
                                     </div>
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <input type="text" id="location" name="location" value="" placeholder="City, state, or zip" class="form-control input-lg" style="border: 1px solid #1ab394;"> </div>
+                                           <%= text_field_tag :city, params[:city], placeholder: "City, state, or zip", class: "form-control input-lg", style: "border: 1px solid #1ab394;"%>
+                                        </div>
                                     </div>
-                                    <div class="col-md-2">
-                                        <button class="btn btn-lg btn-primary " type="submit">Search Jobs</button>
+                                    <div class="col-md-2">                                  
+                                        <%= submit_tag "Search",  class: "btn btn-lg btn-primary "%>
                                     </div>
                                 </div>
-
+                                
                             </div>
                         </div>
                     </div>
+
 
                     <div class="row">
                         <!-- Left Column -->
@@ -42,7 +47,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="job-type">Sort By</label>
-                                                <select name="job-type" id="job-type" class="form-control">
+                                                 <select name="job-type" id="job-type" class="form-control">
                                                     <option value="1" selected>Relevance</option>
                                                     <option value="2">Date</option>
                                                 </select>
@@ -89,98 +94,40 @@
                                 </div>
                             </div>
                             <!-- END - Filter -->
-
+                            <% end %>
                             <!-- Job Search Result -->
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-content">
-                                    <h4>1 - 10 of 5,840 jobs near Los Angeles, CA</h4>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Staff Accountant </a></h3>
-                                        <a href="#" class="search-link">Wpromote</a>
-                                        <br />El Segundo, CA - 12 days ago
-                                        <p> The Staff Accountant reports to the VP of Finance and will assist with the daily execution of accounting activities such as ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Senior Accountant</a></h3> <a href="#" class="search-link">Vertical Careers, Inc.</a>
-                                        <br /> Carson, CA - 5 days ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Accountant</a></h3> <a href="#" class="search-link">The Hall Center</a>
-                                        <br /> Santa Monica, CA - 3 hours ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Accounting Clerk</a></h3> <a href="#" class="search-link">Skyline Urology</a>
-                                        <br /> Torrance, CA - 19 hours ago
-                                        <p> Assists in preparation of monthly general and standard journal entries, financial statements, comparative reports, account ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Financial Analyst / Accountant / Auditor</a></h3> <a href="#" class="search-link">Systemart</a>
-                                        <br /> Torrance, CA - 7 days ago
-                                        <p> Job Title: Financial Analyst Job Location: Torrance, CA Job Duration: 6+ Months (Possible Extension )* *Describe the ideal ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Staff Accountant </a></h3> <a href="#" class="search-link">The Hall Center</a>
-                                        <br /> Santa Monica, CA - 3 hours ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Staff Accountant </a></h3> <a href="#" class="search-link">Westlife Distribution USA LLC</a>
-                                        <br /> Gardena, CA - 13 days ago
-                                        <p> The Staff Accountant will report to our Accounting Manager and will assist the finance team in preparing month-end ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Senior Accountant </a></h3> <a href="#" class="search-link">Multiquip Inc.</a>
-                                        <br /> Carson, CA - 30+ days days ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Accountant Analyst</a></h3> <a href="#" class="search-link">Aptask</a>
-                                        <br /> Los Angeles, CA - 6 days ago
-                                        <p> Accountant, finance, banking, GAAP, GL:. The accounting analyst will be responsible for the preparation of the general ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Staff Accountant</a></h3> <a href="#" class="search-link">Retirement Housing Foundation </a>
-                                        <br /> Long Beach, CA - 2 days ago
-                                        <p> Primarily responsible for using accounting experience and background to perform all higher level accounting functions ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
+                            <% if @results.count > 0 %>
+
+                                <div class="ibox float-e-margins">
+                                    <div class="ibox-content">
+                                    <% @results.each do |job| %>
+                                      
+                                        <div class="hr-line-dashed"></div>  
+                                        <div class="search-result">
+                                            <h3> 
+                                                <%= job.job_title %> 
+                                            </h3> 
+
+                                            <div class = "search-link"> 
+                                                <%= job.company %>  
+                                            </div>
+
+                                            <p> <%= job.formatted_location %> </p>
+                                            <p> <%= job.snippet %> </p>
+
+                                            <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary btn-xs" %>
+                                        </div>    
+                                        
+                                    <% end %>
+
+                                    <div class="hr-line-dashed"></div> 
                                     <div class="text-center">
-                                        <div class="btn-group">
-                                            <button class="btn btn-white" type="button"><i class="fa fa-chevron-left"></i> </button>
-                                            <button class="btn btn-white">1</button>
-                                            <button class="btn btn-white  active">2</button>
-                                            <button class="btn btn-white">3</button>
-                                            <button class="btn btn-white">4</button>
-                                            <button class="btn btn-white">5</button>
-                                            <button class="btn btn-white">6</button>
-                                            <button class="btn btn-white">7</button>
-                                            <button class="btn btn-white" type="button"><i class="fa fa-chevron-right"></i> </button>
-                                        </div>
+                                    <%= paginate @results %>
                                     </div>
-                                </div>
-                            </div>
+
+                                    </div>
+                                </div>                                
+                            <% end %>
                             <!-- END - Job Search Result -->
                         </div>
                         <!-- END - Left Column -->
@@ -188,33 +135,8 @@
                         <div class="col-md-4">
 
                             <!-- Recent Search History -->
-                            <div class="ibox float-e-margins">
-                                <div class="ibox-title">
-                                    <h5>Recent Search History</h5>
-                                    <div class="ibox-tools">
-                                        <a class="collapse-link"> <i class="fa fa-chevron-up"></i> </a>
-                                    </div>
-                                </div>
-                                <div class="ibox-content">
-                                    <div class="feed-activity-list">
-                                        <div class="feed-element">
-                                            <div> <small class="pull-right text-navy">1 minutes ago</small> <a href="#">accountant</a> </div>
-                                        </div>
-                                        <div class="feed-element">
-                                            <div> <small class="pull-right text-navy">7 days ago</small> <a href="#">financial reporting</a> </div>
-                                        </div>
-                                        <div class="feed-element">
-                                            <div> <small class="pull-right text-navy">2 months ago</small> <a href="#">procter & gamble</a> </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <!-- END - Recent Search History -->
-
-
-
-                            <!-- END - Filter -->
-
 
                             <!-- Job Alert -->
                             <div class="ibox float-e-margins">
@@ -274,7 +196,8 @@
                             <!-- END - Related Jobs -->
 
                         </div>
-                   </div>
+                        <!-- END - Right Column -->
+                    </div>
                 </div>
             </div>
             <%= render "layouts/footer" %>

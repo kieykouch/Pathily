@@ -20,3 +20,12 @@
     </li>
   </ul>
 </div>
+
+
+<%= form_tag(help_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<br>
+<%= text_field_tag :city, params[:city], placeholder: "City" %>
+<br>
+<%= submit_tag "Search" %>
+<% end %>
