@@ -35,7 +35,8 @@
                         <!-- Left Column -->
                         <div class="col-md-8">
                             <!-- Filter -->
-                            <div class="ibox">
+                            
+                            <!-- <div class="ibox">
                                 <div class="ibox-title">
                                     <h5>Search Filter</h5>
                                     <div class="ibox-tools">
@@ -47,52 +48,33 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="job-type">Sort By</label>
-                                                 <select name="job-type" id="job-type" class="form-control">
-                                                    <option value="1" selected>Relevance</option>
-                                                    <option value="2">Date</option>
-                                                </select>
+
+                                                <%= select_tag :sort, options_for_select([ ["Relevance","relevance"], ["Date","date"]], "relevance"), class: "form-control" %>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label class="control-label" for="distance">Distance</label>
-                                                <select name="distance" id="distance" class="form-control">
-                                                    <option value="1">Within 5 Miles</option>
-                                                    <option value="2">Within 10 Miles</option>
-                                                    <option value="3" selected>Within 25 Miles</option>
-                                                    <option value="4">Within 50 Miles</option>
-                                                    <option value="5">Within 100 Miles</option>
-                                                </select>
+                                                <label class="control-label" for="distance">Distance</label>                                             
+                                                <%= select_tag :radius, options_for_select([ ["Within 5 Miles",5], ["Within 10 Miles",10], ["Within 25 Miles",25], ["Within 50 Miles",50], ["Within 100 Miles",100]], 25), class: "form-control" %>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label class="control-label" for="salary">Time</label>
-                                                <select name="time" id="time" class="form-control">
-                                                    <option value="1" selected>All Time</option>
-                                                    <option value="2">Last Day</option>
-                                                    <option value="3">Last Week</option>
-                                                    <option value="4">Last 2 Weeks</option>
-                                                    <option value="5">Last 3 Weeks</option>
-                                                </select>
+
+                                                <%= select_tag :fromage, options_for_select([ ["All Time",0], ["Last Day",1], ["Last Week",7], ["Last 2 Week", 14], ["Last 3 Weeks", 21]]), class: "form-control" %>
+
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label class="control-label" for="job-type">Job type</label>
-                                                <select name="job-type" id="job-type" class="form-control">
-                                                    <option value="1" selected>Full-time</option>
-                                                    <option value="2">Temporary</option>
-                                                    <option value="3">Contract</option>
-                                                    <option value="4">Part-time</option>
-                                                    <option value="5">Commission</option>
-                                                    <option value="6">Internship</option>
-                                                </select>
+                                                <label class="control-label" for="job-type">Job type</label>                                               
+                                                <%= select_tag :jt, options_for_select([ ["Full-time","fulltime"], ["Temporary","temporary"], ["Part-time","parttime"], ["Contract","contract"], ["Internship",'internship']]), class: "form-control" %>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- END - Filter -->
                             <% end %>
                             <!-- Job Search Result -->
@@ -100,6 +82,10 @@
 
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-content">
+
+                                    <h4> There are <%= @count_all_job %> jobs</h4>
+                                    <h4>  </h4>
+
                                     <% @results.each do |job| %>
                                       
                                         <div class="hr-line-dashed"></div>  
