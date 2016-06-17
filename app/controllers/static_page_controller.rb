@@ -22,12 +22,23 @@ class StaticPageController < ApplicationController
   end
   
   def jobs
-
+    IndeedAPI.publisher_id = "1548702512499814"
   	@search_query = params[:search]
     search_query_location = params[:city]
+    mylink = params[:searchLink]
 
-	if @search_query.present?
-	  IndeedAPI.publisher_id = "1548702512499814"
+  puts "helloworld"
+
+  if mylink.present?
+
+    firstquote =  mylink.index('"')    
+    substring =  mylink[firstquote+1..-3]
+
+    @search_query  = substring
+    params[:search] = substring  
+    
+  end 
+	if @search_query.present?	  
       @jobs = IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25) #sort: params[:sort], radius:params[:radius], jt:params[:jt], fromage:params[:fromage]
       @results =[]
       if @jobs.total_results > 25
@@ -60,7 +71,7 @@ class StaticPageController < ApplicationController
 	protected
 
 	def search_params
-    	params.require(:jobs).permit(:search, :city, :radius, :sort, :jt, :fromage)
+    	params.require(:jobs).permit(:search, :city, :radius, :sort, :jt, :fromage, :searchLink)
 	end
 
 

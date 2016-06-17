@@ -81,6 +81,6 @@ class JobAlertsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_alert_params
-      params.require(:job_alert).permit(:email, :freqency, :job_relate_title)
+      params.require(:job_alert).permit(:email, :freqency, :job_relate_title, :search, :city, :radius, :sort, :jt, :fromage, :searchLink)
     end
 end

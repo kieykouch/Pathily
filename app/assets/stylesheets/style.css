@@ -19,6 +19,15 @@
   display:none;
 }
 
+
+input.searchlink {
+    color: #23527c;
+    font-size: 13px;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+}
+
 h1,
 h2,
 h3,
