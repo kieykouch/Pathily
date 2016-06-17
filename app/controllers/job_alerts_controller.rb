@@ -26,24 +26,26 @@ class JobAlertsController < ApplicationController
   def create
     @job_alert = JobAlert.new(job_alert_params)
 
-    respond_to do |format|
-      if @job_alert.save
-        format.html { redirect_to @job_alert, notice: 'Job Alert was successfully created.' }
-        format.json { render json: @job_alert, status: :created, location: @job_alert }
-        
-      else
-        format.html { render action: "new" }
-        format.json { render json: @job_alert.errors, status: :unprocessable_entity }
-        
-      end
-    end
+    
 
-    # if @job_alert.save
-    #   redirect_to root_path
-    # else
-    #   format.html { render :new }
-    #   format.json { render json: @job_alert.errors, status: :unprocessable_entity }
+    # respond_to do |format|
+    #   if @job_alert.save
+    #     format.html { redirect_to @job_alert, notice: 'Job Alert was successfully created.' }
+    #     format.json { render json: @job_alert, status: :created, location: @job_alert }
+        
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @job_alert.errors, status: :unprocessable_entity }
+        
+    #   end
     # end
+
+    if @job_alert.save
+      redirect_to root_path
+    else
+      format.html { render :new }
+      format.json { render json: @job_alert.errors, status: :unprocessable_entity }
+    end
     
   end
 

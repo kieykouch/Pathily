@@ -83,19 +83,19 @@
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-content">
 
-                                    <h4> There are <%= @count_all_job %> jobs</h4>
+                                    <h4> There are <%= @count_all_job %> jobs related to <%= @search_query %> </h4>
                                     <h4>  </h4>
 
                                     <% @results.each do |job| %>
                                       
                                         <div class="hr-line-dashed"></div>  
                                         <div class="search-result">
-                                            <h3> 
-                                                <%= job.job_title %> 
+                                            <h3>                                                 
+                                                <%= link_to job.job_title, job.url, :target => "_blank" %>
                                             </h3> 
 
-                                            <div class = "search-link"> 
-                                                <%= job.company %>  
+                                            <div class = "search-link">                                              
+                                                <%= link_to job.company, job.url, :target => "_blank" %>
                                             </div>
 
                                             <p> <%= job.formatted_location %> </p>
@@ -132,23 +132,24 @@
                                         <a class="collapse-link"> <i class="fa fa-chevron-up"></i> </a>
                                     </div>
                                 </div>
+
                                 <div class="ibox-content">
                                     <p>Want an email when new jobs match this search?</p>
 
 
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>Email</label>
-                                            <input type="email" placeholder="Enter your email address" class="form-control">
-                                        </div>
-                                    </form>
+                                    <%= simple_form_for(resource1, :as => resource_name1, :url => job_alerts_path(resource_name1), :remote => true, :html => {:class => 'form-horizontal'}) do |f| %>             
+                                      <div class="form-group">
+                                        <%= f.label :email %>
+                                        <%= f.text_field :email, :class => "form-control", :placeholder => 'Enter your email address' %>
+                                      </div>
 
-
-                                    <p>
-                                        <button type="button" class="btn btn-block btn-primary">Create Job Alert</button>
-                                    </p>
+                                      <div class="form-group">
+                                      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b" %>
+                                     </div>
+                                    <% end %>
                                 </div>
                             </div>
+
                             <!-- END - Job Alert -->
 
                             <!-- Related Jobs -->
