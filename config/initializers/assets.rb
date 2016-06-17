@@ -21,3 +21,4 @@ Rails.application.config.assets.precompile += %w( static_page.css )
 #Javascript
 Rails.application.config.assets.precompile += %w( icheck.min.js )
 Rails.application.config.assets.precompile += %w( inspinia.js )
+Rails.application.config.assets.precompile += %w( notify.js )

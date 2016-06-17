@@ -4,10 +4,10 @@
         <div id="page-wrapper" class="gray-bg">           
             <div class="wrapper wrapper-content animated fadeInRight" style="margin-top: 30px;">
                 <div class="container">
-                    <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
+                    
                     <div class="row">
                         <div class="col-lg-12">
-
+                            <%= form_tag(jobs_path, :method => "get", id: "search-form") do %>
                             <div class="ibox float-e-margins">
                                 
                                 <div class="row">
@@ -27,6 +27,7 @@
                                 </div>
                                 
                             </div>
+                            <% end %>
                         </div>
                     </div>
 
@@ -76,7 +77,7 @@
                                 </div>
                             </div> -->
                             <!-- END - Filter -->
-                            <% end %>
+                            
                             <!-- Job Search Result -->
                             <% if @results.count > 0 %>
 
@@ -133,22 +134,42 @@
                                     </div>
                                 </div>
 
-                                <div class="ibox-content">
+                                <div class="ibox-content", id= "containerforgetemail">
                                     <p>Want an email when new jobs match this search?</p>
 
-
-                                    <%= simple_form_for(resource1, :as => resource_name1, :url => job_alerts_path(resource_name1), :remote => true, :html => {:class => 'form-horizontal'}) do |f| %>             
+                                      <%= simple_form_for(resource1, :as => resource_name1, :url => job_alerts_path(resource_name1), :remote => true, :html => {:id => 'form-horizontal'}) do |f| %>
                                       <div class="form-group">
                                         <%= f.label :email %>
-                                        <%= f.text_field :email, :class => "form-control", :placeholder => 'Enter your email address' %>
+                                        <%= f.text_field :email, :class => "form-control", autocomplete: "off", :placeholder => 'Enter your email address' %>
                                       </div>
-
                                       <div class="form-group">
-                                      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b" %>
-                                      <% end %>
-                                     </div>
-                                    
+                                      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b", :id => "job_alert_tag" %>
+                                      
+                                      </div>
+                                      <% end %> 
+                                   
                                 </div>
+
+                                <script>
+                                        $(window).load(function(){
+                                            $('#job_alert_tag').click(function(){ 
+
+                                            function validateEmail(email) {
+                                                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                                                return re.test(email);
+                                            }
+    
+
+                                            var value = $("#job_alert_email").val();
+                                            if (value != "" && validateEmail(value))
+                                            {                                  
+                                                $('#job_alert_tag').notify 
+                                                ("Summited the email", "success", { position:"right" });
+                                            }
+                                          });
+                                       });
+                                </script>
+
                             </div>
 
                             <!-- END - Job Alert -->
