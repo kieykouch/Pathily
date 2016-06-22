@@ -27,8 +27,6 @@ class StaticPageController < ApplicationController
     search_query_location = params[:city]
     mylink = params[:searchLink]
 
-  puts "helloworld"
-
   if mylink.present?
 
     firstquote =  mylink.index('"')    
@@ -38,27 +36,31 @@ class StaticPageController < ApplicationController
     params[:search] = substring  
     
   end 
-	if @search_query.present?	  
+
+  value = 1
+  if params[:page].present?
+    value = params[:page].to_i
+  end
+
+
+	if @search_query.present?
       @jobs = IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25) #sort: params[:sort], radius:params[:radius], jt:params[:jt], fromage:params[:fromage]
       @results =[]
       if @jobs.total_results > 25
-        start = 1
-        10.times do
-          IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25, start: start).results. each do |result|
-          	#:limit = 25
-            @results << result
-            start +=25
-          end
-        end
+        
+        @results += Array.new((value-1)*25, "1")
+        @results += IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25, start: 25*value+1).results          
+        @results += Array.new(225-(value-1)*25, "1")
+
       end
     else
     	# Search accountant straight
       @jobs = []
       @results = []
       @search_query = "Accountant"
-      IndeedAPI.search_jobs(q: @search_query, limit: 25).results. each do |result|
-      	@results << result
-      end
+      @results += IndeedAPI.search_jobs(q: @search_query, limit: 25).results
+      	
+      
       
     end
 
