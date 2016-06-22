@@ -3,17 +3,14 @@ class StaticPageController < ApplicationController
   
 
   def home
-
-    
+      @results = []
+      @results += IndeedAPI.search_jobs(q: "Accountant").results
+      print @results.length
   end
   
   def help
 
-  puts "88888888877880887983728788878787087878787870878788708"
-	puts params[:search]
-	puts params[:city]
-	puts "88888888877880887983728788878787087878787870878788701"
- 
+  
 
   end
   
@@ -22,7 +19,7 @@ class StaticPageController < ApplicationController
   end
   
   def jobs
-    IndeedAPI.publisher_id = "1548702512499814"
+    
   	@search_query = params[:search]
     search_query_location = params[:city]
     mylink = params[:searchLink]

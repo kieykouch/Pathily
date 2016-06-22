@@ -146,28 +146,26 @@
                             <div class="ibox float-e-margins">
                                 <div class="ibox-content">
                                     <h4>Job Listings</h4>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Staff Accountant </a></h3>
-                                        <a href="#" class="search-link">Wpromote</a>
-                                        <br />El Segundo, CA - 12 days ago
-                                        <p> The Staff Accountant reports to the VP of Finance and will assist with the daily execution of accounting activities such as ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Senior Accountant</a></h3> <a href="#" class="search-link">Vertical Careers, Inc.</a>
-                                        <br /> Carson, CA - 5 days ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
-                                    <div class="hr-line-dashed"></div>
-                                    <div class="search-result">
-                                        <h3><a href="#">Accountant</a></h3> <a href="#" class="search-link">The Hall Center</a>
-                                        <br /> Santa Monica, CA - 3 hours ago
-                                        <p> The Senior Accountant will perform general ledger accounting functions as a senior level professional in a multiple ...</p>
-                                        <button class="btn btn-primary btn-xs"> Apply for this job</button>
-                                    </div>
+
+
+                                    <% (0..2).each do |i| %>
+                                        <div class="hr-line-dashed"></div>  
+                                        <div class="search-result">
+                                            <h3>                                                 
+                                                <%= link_to @results[i].job_title, @results[i].url, :target => "_blank" %>
+                                            </h3> 
+
+                                            <div class = "search-link">                                              
+                                                <%= link_to @results[i].company, @results[i].url, :target => "_blank" %>
+                                            </div>
+
+                                            <p> <%= @results[i].formatted_location %> </p>
+                                            <p> <%= @results[i].snippet %> </p>
+
+                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs" %>
+                                        </div>  
+                                    <% end %>                                    
+                                    
                                     <div class="hr-line-dashed"></div>
                                     <a href="jobs.html">
                                         <button class="btn btn-lg btn-primary " type="submit">See more jobs</button>
