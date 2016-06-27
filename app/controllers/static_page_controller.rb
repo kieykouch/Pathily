@@ -41,13 +41,13 @@ class StaticPageController < ApplicationController
 
 
 	if @search_query.present?
-      @jobs = IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25) #sort: params[:sort], radius:params[:radius], jt:params[:jt], fromage:params[:fromage]
+      @jobs = IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 15) #sort: params[:sort], radius:params[:radius], jt:params[:jt], fromage:params[:fromage]
       @results =[]
-      if @jobs.total_results > 25
+      if @jobs.total_results > 15
         
-        @results += Array.new((value-1)*25, "1")
-        @results += IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 25, start: 25*value+1).results          
-        @results += Array.new(225-(value-1)*25, "1")
+        @results += Array.new((value-1)*15, "1")
+        @results += IndeedAPI.search_jobs(q: @search_query, l: search_query_location, limit: 15, start: 25*value+1).results          
+        @results += Array.new(225-(value-1)*15, "1")
 
       end
     else
@@ -55,7 +55,7 @@ class StaticPageController < ApplicationController
       @jobs = []
       @results = []
       @search_query = "Accountant"
-      @results += IndeedAPI.search_jobs(q: @search_query, limit: 25).results
+      @results += IndeedAPI.search_jobs(q: @search_query, limit: 15).results
       	
       
       
@@ -63,7 +63,7 @@ class StaticPageController < ApplicationController
 
     puts "1111111"
     @count_all_job = @results.length
-    @results = Kaminari.paginate_array(@results).page(params[:page]).per(25)
+    @results = Kaminari.paginate_array(@results).page(params[:page]).per(15)
 	
   end
   
