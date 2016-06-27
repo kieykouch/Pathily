@@ -36,6 +36,7 @@
                                             $(window).load(function(){
                                                 $('#PleaseRegister').modal('show');
                                            });
+
                                         </script>
                                         <div class="col-md-3">
                                             <button class="btn btn-lg btn-primary " onClick="$('#PleaseRegister').modal()">Launch Career Path</button>
@@ -60,6 +61,20 @@
                                 <div class="ibox-title">
                                     <h5>Career Path - Financial Controller</h5>
                                 </div>
+
+
+                                <% if !user_signed_in? %>
+                                        
+                                        <div class="ibox-content">
+                                            <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;" onClick="$('#PleaseRegister').modal()">
+                                        </div>
+
+                                    <% else %>
+                                        <div class="ibox-content">
+                                            <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;">
+                                        </div>  
+                                <% end %>   
+
                                 <div class="ibox-content">
                                     <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;" onClick="$('#PleaseRegister').modal()">
                                 </div>
@@ -246,13 +261,13 @@
                                     </p>
 
                                     <script>
-                                            $(window).load(function(){
-                                                $('#job_alert_tag').click(function(){
+                                            
+                                            $('#job_alert_tag').click(function(){
                                                     $('#flash').delay(500).fadeIn('normal', function() {
                                                         $(this).delay(2500).fadeOut();
                                                     });
                                               });
-                                           });
+                                           
                                     </script>
                                 </div>
                             </div>

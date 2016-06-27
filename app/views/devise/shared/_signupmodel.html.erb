@@ -7,6 +7,7 @@
                     <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title">Sign Up for Pathily</h4>
+                <h4 id="flashThankYou">Thank you so signing up with Pathily</h4>
             </div>
 
             <div class="modal-body">
@@ -30,7 +31,7 @@
             </div>                              
                 
             <div class="modal-footer form-group">
-                <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b" %>
+                <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b", :id => "signupmodel" %>
                 <% end %>
 
                 <p class="text-muted text-center">
@@ -39,9 +40,15 @@
                 </small>
                 </p>
             </div>
+            <script>
+                    
 
-
-
+              $('#signupmodel').click(function(){
+                      $('#flashThankYou').fadeIn('normal', function() {
+                          $(this).delay(11000).fadeOut();
+                      });
+                });
+            </script>
         </div>
     </div>
 </div>
