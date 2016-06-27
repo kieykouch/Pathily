@@ -96,10 +96,10 @@
                                             </h3> 
 
                                             <div class = "search-link">                                              
-                                                <%= link_to job.company, job.url, :target => "_blank" %>
+                                                <%= link_to job.company + ", "+ job.formatted_location, job.url, :target => "_blank" %>
                                             </div>
 
-                                            <p> <%= job.formatted_location %> </p>
+                                            <p> <%=  %> </p>
                                             <p> <%= job.snippet %> </p>
 
                                             <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary btn-xs" %>
