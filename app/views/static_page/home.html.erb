@@ -29,9 +29,7 @@
                                                 <option>Year to achieve: 10</option>
                                             </select>
                                         </div>
-                                    </div>
-
-                                    
+                                    </div>                                    
 
                                     <% if !user_signed_in? %>
                                         <script>
@@ -47,9 +45,7 @@
                                     <div class="col-md-3">
                                         <button class="btn btn-lg btn-primary " type="submit">Launch Career Path</button>
                                     </div>
-                                    <% end %>
-
-                                    
+                                    <% end %>                                    
 
                                 </div>
                             </div>
@@ -65,7 +61,7 @@
                                     <h5>Career Path - Financial Controller</h5>
                                 </div>
                                 <div class="ibox-content">
-                                    <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;">
+                                    <img src="<%= asset_path( 'career_path.jpg' ) %>" style="height: 100%; width: 100%;" onClick="$('#PleaseRegister').modal()">
                                 </div>
                             </div>
                             <!-- END - Career Path Visualization -->

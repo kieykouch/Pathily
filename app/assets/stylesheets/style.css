@@ -19,6 +19,9 @@
   display:none;
 }
 
+#PleaseRegister .modal-dialog  {width:35%;}
+
+#CreateJobAlert .modal-dialog  {width:35%;}
 
 input.searchlink {
     color: #23527c;
