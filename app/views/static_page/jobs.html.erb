@@ -1,4 +1,5 @@
 <%= render "layouts/headerHomePage" %>
+<%= render "layouts/jobalertmodal" %>
 <body class="top-navigation">
     <div id="wrapper">
         <div id="page-wrapper" class="gray-bg">           
@@ -239,3 +240,27 @@
         </div>
     </div>
 </body>
+
+<script>
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=0'
+}
+
+$(window).load(function(){
+
+    if($.cookie('msg') != null && $.cookie('msg') != "")
+    {
+        $("div#CreateJobAlert.modal, .modal-backdrop").hide();
+    }
+    else
+    {
+        $('#CreateJobAlert').modal('show');
+        var date = new Date();
+        var minutes = 60;
+        date.setTime(date.getTime() + (minutes * 60 * 1000));
+        $.cookie("msg", "str", { expires: date });        
+    }
+
+    
+});
+</script>
