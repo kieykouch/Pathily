@@ -1,0 +1,14 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Users") do |sheet|
+    sheet.add_row ["ID", "First Name","Last Name","Email", "Created"]
+    @users.each do |user|
+        sheet.add_row [user.id, user.first_name, user.last_name, user.email, user.created_at]
+    end
+end
+
+wb.add_worksheet(name: "Job Alert") do |sheet|
+    sheet.add_row ["ID", "Email","Frequency","Job Title", "Created"]
+    @jobalerts.each do |job|
+        sheet.add_row [job.id, job.email, job.freqency, job.job_relate_title, job.created_at]
+    end
+end

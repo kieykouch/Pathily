@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   # With HTML
   get 'index' => 'static_page#home'
-  # get 'about' => 'static_page#about'
+  get 'about' => 'static_page#about'
   # get 'help' => 'static_page#help'
   get 'jobs' => 'static_page#jobs'
 

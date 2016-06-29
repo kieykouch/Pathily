@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: job_alerts
+#
+#  id               :integer          not null, primary key
+#  email            :string
+#  freqency         :string
+#  job_relate_title :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

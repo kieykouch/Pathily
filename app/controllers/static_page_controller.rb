@@ -1,6 +1,4 @@
-class StaticPageController < ApplicationController
-
-  
+class StaticPageController < ApplicationController  
 
   def home
       @results = []
@@ -8,14 +6,17 @@ class StaticPageController < ApplicationController
       print @results.length
   end
   
-  def help
-
-  
+  def help  
 
   end
   
   def about
-    
+      @users = User.order(:email)
+      @jobalerts = JobAlert.all
+      respond_to do |format|
+        format.html
+        format.xlsx {render xlsx: 'download',filename: "Users.xlsx"}
+      end
   end
   
   def jobs

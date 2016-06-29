@@ -48,4 +48,5 @@ gem 'simple_form'
 gem 'httparty'
 gem 'indeed_api'
 gem 'kaminari'
-
+gem 'axlsx'
+gem "axlsx_rails"
