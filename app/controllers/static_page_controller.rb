@@ -1,9 +1,14 @@
 class StaticPageController < ApplicationController  
 
+  before_filter :authenticate_user!, only: [:setting]
+
   def home
       @results = []
       @results += IndeedAPI.search_jobs(q: "Accountant").results
       print @results.length
+  end
+
+  def setting
   end
   
   def help  

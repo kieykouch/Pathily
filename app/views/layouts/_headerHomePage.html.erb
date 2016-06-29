@@ -28,7 +28,9 @@
 		                    	<span class="caret"></span>
 		                    </a>
 		                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
-		                        <li><a href="_settings.html">Settings</a></li>
+		                        <li>
+		                        	<%= link_to "Settings", setting_path %>
+		                        </li>
 		                        <li class="divider"></li>
 		                        <li>
 		                        	<%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %>
