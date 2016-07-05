@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'index.html' => 'static_page#home'
   get 'about.html' => 'static_page#about'
   # get 'help.html' => 'static_page#help'
-  get 'jobs.html' => 'static_page#jobs'
+  # get 'jobs.html' => 'static_page#jobs'
 
   get 'new_job_alert', to:'job_alerts#new'
   post 'job_alerts', to:'job_alerts#create'
