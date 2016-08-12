@@ -144,32 +144,14 @@
                                         <%= f.text_field :email, :class => "form-control", autocomplete: "off", :placeholder => 'Enter your email address' %>
                                       </div>
                                       <div class="form-group">
-                                      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b", :id => "job_alert_tag" %>
+                                      <%= f.submit "Submit", :class => "btn btn-primary block full-width m-b", :id => "job_alert_tag2" %>
                                       
                                       </div>
                                       <% end %> 
                                    
                                 </div>
 
-                                <script>
-                                        
-                                            $('#job_alert_tag').click(function(){ 
-
-                                            function validateEmail(email) {
-                                                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                                                return re.test(email);
-                                            }
-    
-
-                                            var value = $("#job_alert_email").val();
-                                            if (value != "" && validateEmail(value))
-                                            {                                  
-                                                $('#job_alert_tag').notify 
-                                                ("Summited the email", "success", { position:"right" });
-                                            }
-                                          });
-                                    
-                                </script>
+                                
 
                             </div>
 
