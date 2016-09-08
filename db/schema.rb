@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613002338) do
+ActiveRecord::Schema.define(version: 20160907070352) do
 
   create_table "job_alerts", force: :cascade do |t|
     t.string   "email"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20160613002338) do
     t.datetime "updated_at",                          null: false
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

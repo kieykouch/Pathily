@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   # resources :job_alerts
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { registrations: 'registrations',  :omniauth_callbacks => "omniauth_callbacks" }
   root 'static_page#home'
   
   # Without HTML
