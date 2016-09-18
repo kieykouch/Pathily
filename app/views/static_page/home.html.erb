@@ -159,16 +159,16 @@
                                         <div class="hr-line-dashed"></div>  
                                         <div class="search-result">
                                             <h3>                                                 
-                                                <%= link_to @results[i].job_title, @results[i].url, :target => "_blank" %>
+                                                <%= link_to @results[i].job_title, @results[i].url, :target => "_blank", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
                                             </h3> 
 
                                             <div class = "search-link">                                              
-                                                <%= link_to @results[i].company + ", " + @results[i].formatted_location, @results[i].url, :target => "_blank" %>
+                                                <%= link_to @results[i].company + ", " + @results[i].formatted_location, @results[i].url, :target => "_blank", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
                                             </div>
                                             
                                             <p> <%= @results[i].snippet %> </p>
 
-                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs" %>
+                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
                                         </div>  
                                     <% end %>                                    
                                     
@@ -210,19 +210,19 @@
                                 <div class="ibox-content">
                                     <div class="feed-activity-list">
                                         <div class="feed-element">
-                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Account&city=&commit=Search">Accountant</a> </div>
+                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Account&city=&commit=Search" onclick = "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);">Accountant</a> </div>
                                         </div>
                                         <div class="feed-element">
-                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Accounting+Manager&city=&commit=Search">Accounting Manager</a> </div>
+                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Accounting+Manager&city=&commit=Search" onclick = "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);">Accounting Manager</a> </div>
                                         </div>
                                         <div class="feed-element">
-                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Assistant+Controller&city=&commit=Search">Assistant Controller</a> </div>
+                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Assistant+Controller&city=&commit=Search" onclick = "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);">Assistant Controller</a> </div>
                                         </div>
                                         <div class="feed-element">
-                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Chief+Financial+Officer+%28CFO%29&city=&commit=Search">Chief Financial Officer (CFO)</a> </div>
+                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Chief+Financial+Officer+%28CFO%29&city=&commit=Search" onclick = "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);">Chief Financial Officer (CFO)</a> </div>
                                         </div>
                                         <div class="feed-element">
-                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Finance+Director&city=&commit=Search">Finance Director</a> </div>
+                                            <div> <a href="http://www.pathily.com/jobs?utf8=%E2%9C%93&search=Finance+Director&city=&commit=Search" onclick = "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);">Finance Director</a> </div>
                                         </div>
                                     </div>
                                 </div>

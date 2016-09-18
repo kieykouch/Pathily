@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  devise :omniauthable, :omniauth_providers => [:linkedin]
+  devise :omniauthable, :omniauth_providers => [:facebook, :linkedin, :google_oauth2]
 
 
   before_save :capitalize_names
@@ -40,34 +40,32 @@ class User < ActiveRecord::Base
 	self.password_confirmation = password	
   end
 
-
-  # def has_provider?(provider_name)
-  #   !providers.find_by(provider: provider_name).nil?
-  # end
-
-  # def self.find_for_provider_oauth(auth, current_user = nil)
-  #   provider = Provider.find_or_initialize_by(provider: auth[:provider], uid: auth[:uid])
-
-  #   password = Devise.friendly_token[0,20]
-  #   user = current_user
-  #   user ||= User.find_by(email: auth[:email]) if auth[:email].present?
-  #   user ||= provider.user
-  #   user ||= provider.build_user(email: auth[:email], name: auth[:name], password: password, password_confirmation: password, token: auth[:token],
-  #                                provider: auth[:provider], uid: auth[:uid])
-
-  #   provider.token = auth[:token]
-  #   provider.secret = auth[:secret]
-  #   provider.user_id = user.id
-  #   provider.nickname = auth[:nickname]
-  #   provider.save
-  #   provider
-  # end
-
-  
-  
-
   def self.from_omniauth(auth)
       
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+          user.provider = auth.provider
+          user.uid = auth.uid
+          user.first_name = auth.info.first_name
+          user.last_name = auth.info.last_name
+          user.email = auth.info.email
+          user.password = Devise.friendly_token[0,20]
+          user.password_confirmation = user.password
+      end
+  end
+  
+  def self.from_omniauth_facebook(auth)
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+          user.provider = auth.provider
+          user.uid = auth.uid
+          user.first_name = auth.info.name.split(" ")[0]
+          user.last_name = auth.info.name.split(" ")[1]
+          user.email = auth.info.email
+          user.password = Devise.friendly_token[0,20]
+          user.password_confirmation = user.password
+      end
+  end
+  
+  def self.from_omniauth_gmail(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
           user.provider = auth.provider
           user.uid = auth.uid

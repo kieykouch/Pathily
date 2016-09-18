@@ -52,3 +52,6 @@ gem 'axlsx'
 gem "axlsx_rails"
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'omniauth-facebook'
+gem "gmail"
+gem "omniauth-google-oauth2"
