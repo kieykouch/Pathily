@@ -159,16 +159,16 @@
                                         <div class="hr-line-dashed"></div>  
                                         <div class="search-result">
                                             <h3>                                                 
-                                                <%= link_to @results[i].job_title, @results[i].url, :target => "_blank", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
+                                                <%= link_to @results[i].job_title, @results[i].url, :target => "_blank", :onclick => "ga('send', 'event', 'JobFromHomePage', 'Click', 'JobFromHomePage1');" %>
                                             </h3> 
 
                                             <div class = "search-link">                                              
-                                                <%= link_to @results[i].company + ", " + @results[i].formatted_location, @results[i].url, :target => "_blank", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
+                                                <%= link_to @results[i].company + ", " + @results[i].formatted_location, @results[i].url, :target => "_blank", :onclick => "ga('send', 'event', 'JobFromHomePage', 'Click', 'JobFromHomePage1');" %>
                                             </div>
                                             
                                             <p> <%= @results[i].snippet %> </p>
 
-                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromHomePage/']);" %>
+                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs", :onclick => "ga('send', 'event', 'JobFromHomePage', 'Click', 'JobFromHomePage1');" %>
                                         </div>  
                                     <% end %>                                    
                                     
