@@ -7,6 +7,14 @@
                     <span class="sr-only">Close</span>
                 </button>
                 <h4 class="modal-title">Free Personalized Career Maps to Help you Achiever Your Goals. <br> Sign Up Now!</h4>
+                <div class="logingroupspecial" style="text-align: center;">
+                    <h3>One Click Signup</h3>
+                    <div class="">
+                    </div>
+                    <%= link_to "", user_linkedin_omniauth_authorize_path, :class => "fa fa-linkedin-square fa-3x", :style=>'margin-right: 10px;' %>
+                    <%= link_to "", user_facebook_omniauth_authorize_path, :class => "fa fa-facebook-square fa-3x" %>
+                    <%= link_to "", user_google_oauth2_omniauth_authorize_path, :class => "fa fa-google-plus fa-3x", :style=>'margin-left: 10px;' %>
+                </div>
                 <h4 id="flashThankYou">Thank you so signing up with Pathily</h4>
             </div>
 
@@ -33,19 +41,6 @@
             <div class="modal-footer form-group">
                 <%= f.submit "Sign up", :class => "btn btn-primary block full-width m-b", :id => "signupmodel" %>
                 <% end %>
-                <div class="logingroupspecial" style="text-align: center;">
-                    <div class="fa fa-linkedin-square fa-2x">
-                    </div>
-                    <%= link_to "Sign Up with Linkedin", user_linkedin_omniauth_authorize_path%>
-                    <br>
-                    <div class="fa fa-facebook-square fa-2x">
-                    </div>
-                    <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
-                    <br>
-                    <div class="fa fa-google-plus fa-2x">
-                    </div>
-                    <%= link_to "Sign in with Gmail", user_google_oauth2_omniauth_authorize_path %>
-                </div>
                 <p class="text-muted text-center">
                 <small>Already have an account? 
                     <%= link_to "Log in", new_session_path(resource_name)%><br />
