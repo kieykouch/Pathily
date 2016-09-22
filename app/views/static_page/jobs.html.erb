@@ -93,17 +93,17 @@
                                         <div class="hr-line-dashed"></div>  
                                         <div class="search-result">
                                             <h3>                                                 
-                                                <%= link_to job.job_title, job.url, :target => "_blank", :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromTheJobPage/']);"%>
+                                                <%= link_to job.job_title, job.url, :target => "_blank", :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
                                             </h3> 
 
                                             <div class = "search-link">                                              
-                                                <%= link_to job.company + ", "+ job.formatted_location, job.url, :target => "_blank" , :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromTheJobPage/']);"%>
+                                                <%= link_to job.company + ", "+ job.formatted_location, job.url, :target => "_blank" , :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
                                             </div>
 
                                             <p> <%=  %> </p>
                                             <p> <%= job.snippet %> </p>
 
-                                            <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary btn-xs" , :onclick => "javascript: _gap.push(['_trackPageview', '/JobFromTheJobPage/']);"%>
+                                            <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary btn-xs" , :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
                                         </div>    
                                         
                                     <% end %>
