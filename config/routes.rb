@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # Without HTML
   get 'index' => 'static_page#home'
   get 'about' => 'static_page#about'
+  get 'thankyou' => 'static_page#thankyoupage'
   # get 'help' => 'static_page#help'
   get 'jobs' => 'static_page#jobs'
   get 'setting' => 'static_page#setting'

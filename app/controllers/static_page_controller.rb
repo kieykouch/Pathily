@@ -7,6 +7,9 @@ class StaticPageController < ApplicationController
       @results += IndeedAPI.search_jobs(q: "Accountant").results
       print @results.length
   end
+  
+  def thankyoupage
+	end
 
   def setting
   end
@@ -62,9 +65,6 @@ class StaticPageController < ApplicationController
       @results = []
       @search_query = "Accountant"
       @results += IndeedAPI.search_jobs(q: @search_query, limit: 15).results
-      	
-      
-      
     end
 
     puts "1111111"
