@@ -168,7 +168,7 @@
                                             
                                             <p> <%= @results[i].snippet %> </p>
 
-                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary btn-xs", :onclick => "ga('send', 'event', 'JobFromHomePage', 'Click', 'JobFromHomePage1');" %>
+                                            <%= link_to "Apply for this job", @results[i].url, :target => "_blank", class: "btn btn-primary", :onclick => "ga('send', 'event', 'JobFromHomePage', 'Click', 'JobFromHomePage1');" %>
                                         </div>  
                                     <% end %>                                    
                                     

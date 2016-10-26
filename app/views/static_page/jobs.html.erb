@@ -85,15 +85,29 @@
                                 <div class="ibox float-e-margins">
                                     <div class="ibox-content">
 
-                                    <h4> There are <%= @count_all_job %> jobs related to <%= @search_query %> </h4>
-                                    <h4>  </h4>
-
+                                    <div class="col-md-8" style="padding-left: 0px;">
+                                        <h4 style="text-align: left;">
+                                            There are <%= @count_all_job %> jobs related to <%= @search_query %>
+                                            </h4>
+                                    </div>
+                                    <div class="col-md-4" style="padding-right: 0px">
+                                        <h4 style="text-align: right">
+                                            <%= image_tag 'starhalf.png', class: 'starship', :style=>'margin-bottom: 6px;' %>
+                                            Featured Jobs
+                                        </h4>
+                                    </div>
+                                    
+                                    <% count = 0 %>
+                                    
                                     <% @results.each do |job| %>
                                       
                                         <div class="hr-line-dashed"></div>  
                                         <div class="search-result">
                                             <h3>                                                 
                                                 <%= link_to job.job_title, job.url, :target => "_blank", :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
+                                                <% if count<3 %>
+                                                    <%= image_tag 'starhalf.png', class: 'starship', :style=>'margin-bottom: 6px;' %>
+                                                <% end %>
                                             </h3> 
 
                                             <div class = "search-link">                                              
@@ -103,9 +117,9 @@
                                             <p> <%=  %> </p>
                                             <p> <%= job.snippet %> </p>
 
-                                            <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary btn-xs" , :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
+                                            <%= link_to "Apply for this job", job.url, :target => "_blank", class: "btn btn-primary" , :onclick => "ga('send', 'event', 'JobFromTheJobPage', 'Click', 'JobFromTheJobPage1');"%>
                                         </div>    
-                                        
+                                        <% count = count + 1 %>
                                     <% end %>
 
                                     <div class="hr-line-dashed"></div> 
