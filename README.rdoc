@@ -8,6 +8,6 @@ Job Search Never been easier.
 
 You can access this application with www.pathily.com
 
-<img src="Front.png" height="400" alt="Screenshot"/>
-<img src="3.png" height="400" alt="Screenshot"/>
-<img src="2nd.png" height="400" alt="Screenshot"/>
+<img src="https://github.com/kieykouch/Pathily/blob/master/Screen/Front.png" height="400" alt="Screenshot"/>
+<img src="https://github.com/kieykouch/Pathily/blob/master/Screen/2nd.png" height="400" alt="Screenshot"/>
+<img src="https://github.com/kieykouch/Pathily/blob/master/Screen/3.png" height="400" alt="Screenshot"/>
