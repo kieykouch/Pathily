@@ -7,3 +7,7 @@ Job Search Never been easier.
 == This Application, using Ruby on Rails for the application, hosting on Heroku and DNS with AWS.
 
 You can access this application with www.pathily.com
+
+<img src="Front.png" height="400" alt="Screenshot"/>
+<img src="3.png" height="400" alt="Screenshot"/>
+<img src="2nd.png" height="400" alt="Screenshot"/>
