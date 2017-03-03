@@ -5,3 +5,5 @@ You can register your account with us, either by complecting the form or using y
 Job Search Never been easier.
 
 == This Application, using Ruby on Rails for the application, hosting on Heroku and DNS with AWS.
+
+You can access this application with www.pathily.com
